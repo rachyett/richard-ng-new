@@ -1,0 +1,72 @@
+  <!--  <mat-form-field class="search-form">
+    <input matInput placeholder="Search" type="text">
+  </mat-form-field>
+  <button button="submit" mat-raised-button color="primary" (click)="toggle()">&lt; Back</button>
+  <br> -->
+
+<div *ngIf="showMainContent">
+  <mat-expansion-panel *ngIf=show [expanded]="panelOpenState" hideToggle [disabled]=true>
+    <mat-expansion-panel-header>
+      <mat-form-field floatLabel="never">
+        <mat-select placeholder="{{ dropdownLabel }}" (selectionChange)="onFetchPosts(this.theme.name,$event.value)">
+          <mat-option *ngFor="let taxonomy of taxonomys" [value]="taxonomy.value">
+            {{ taxonomy.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <section fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="0.2%" fxLayoutAlign="start stretch"
+      fxLayoutAlign.lt-md="center center">
+      <ng-container *ngIf="show">
+        <mat-card *ngFor="let post of loadedPosts;let i= index" [class.selected]="post === selectedPost"
+          (click)="onSelect(post); ShowHideButton();toggleActive()" class="example-card" fxLayout="column" fxLayoutAlign="start start"
+          fxLayoutAlign.lt-md="center center">
+          <mat-card-header role="tab" id="{{'Id'+i}}">
+            <!--  <div mat-card-avatar class="example-header-image"></div> -->
+          </mat-card-header>
+          <img mat-card-image    [ngClass]="{circ: post.theme==='plaque'}"  src="{{ this.localImagePath+post.image }}" alt={{post.title}}> <!-- </a> -->
+          <mat-card-title>{{ post.title }}</mat-card-title>
+          <mat-card-subtitle>{{ post.abstract }}</mat-card-subtitle>
+          <!--   <mat-card-subtitle>{{ post.directions }}</mat-card-subtitle> -->
+          <!-- </mat-card-title-group> -->
+
+          <mat-card-content>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+
+    </section>
+    </div>
+    <div *ngIf="!showMainContent">
+      <button (click)="ShowHideButton()" mat-icon-button><mat-icon class="icon-display" color="primary">arrow_back_ios</mat-icon></button>
+      <app-detail [post]="selectedPost" ></app-detail>
+    </div>
+
+<!-- <mat-action-row>
+    <button mat-raised-button (click)="togglePanel()">TOGGLE</button>
+  </mat-action-row>
+</mat-expansion-panel> -->
+
+
+<!-- <button (click)="ShowHideButton();toggleActive()" -->
+
+<!--  <router-outlet></router-outlet>  -->
+
+
+<!--
+<div *ngIf="selectedPost">
+
+    <h2>{{selectedPost.title | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedPost.resource}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedPost.title" placeholder="title"/>
+      </label>
+    </div>
+
+  </div>
+
+   <iframe src="https://www.google.co.uk/maps/d/embed?mid=1E2lY1GyJb5KrUbylOLIPYQmbNUROiAMo" width="640" height="480"></iframe>
+-->

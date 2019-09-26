@@ -1,0 +1,91 @@
+pre {
+  display: flex;
+  white-space: pre-wrap;
+  font-family: Roboto,Material,Oswald,monospace;
+  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+  white-space: -pre-wrap; /* Opera */
+  white-space: -o-pre-wrap; /* Opera */
+  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+  word-wrap: break-word; /* IE 5.5+ */
+  margin: 1em 0;
+}
+
+
+img {
+  height: auto;
+  width: auto;
+  max-width: 720px;
+ margin: 0px 0px 10px 35px;
+ /* margin: 10px 10px 10px 10px;
+ padding: 10px 10px 10px 10px;
+ margin: 0px 10px 0px 10px;  top right bottom left */
+}
+
+.mat-h2 {
+  margin: 0px 0px 0px 22px;
+}
+
+.mat-card-image {
+ /* height: 300px; */
+ max-width: 720px;
+ width: 90vw;
+ height: auto;
+}
+
+.mat-video {
+  max-width: 720px;
+  width: 90vw;
+  height: auto;
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+
+}
+
+.resp-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.resp-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720px;
+  height: 100%;
+  border: 0;
+}
+
+
+agm-map {
+  height: 90vh;
+    /* width: 90vw; */
+     max-width: 720px;
+     margin-left: 0;
+     padding: 0;
+     -ms-overflow-x: hidden;
+     overflow-x: hidden;
+     overflow-y: scroll;
+     position: relative;
+     overflow: hidden;
+}
+
+.mat-expansion-panel {
+
+  padding: 10px 10px 5px 0px;
+}
+
+.content {
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 720px;
+  margin: 10px 5px 35px 35px;
+}
+h1 {
+  margin: 0px 0px 0px 20px;
+}
+
+/*  iframe solution from https://blog.theodo.com/2018/01/responsive-iframes-css-trick/ */

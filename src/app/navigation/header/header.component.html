@@ -1,0 +1,91 @@
+<mat-toolbar color="primary">
+<span>
+<!-- this is the 'hamburger button' only showing on smalll devices-->
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div fxHide.xs>
+  <!--   <h2>{{title}} </h2> -->
+  </div>
+
+ <!-- this is the top menue hidden on small devices -->
+
+
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs >
+    <ul fxLayout fxLayoutGap="40px" class="navigation-items" (click)="onClickToolbar()">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="setTheTitle('Home'); setTitle('Home')">
+        <a routerLink="/home">Home:</a>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="setTheTitle('Art'); setTitle('Public Art in Newcastle Upon Tyne')">
+        <a routerLink="/theme/art/Quayside Art">Art:</a>
+      </li>
+
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="setTheTitle('Attractions'); setTitle('Public Attractions in Newcastle Upon Tyne')">
+        <a routerLink="/theme/attraction/ArtDeco Building">Attractions:</a>
+      </li>
+
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" title="Heritage Display Panels"
+        (click)="setTheTitle('Heritage'); setTitle('Heritage Information Panels in Newcastle Upon Tyne')">
+        <a routerLink="/theme/panel/Town Wall Panel">Heritage:</a>
+      </li>
+
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="setTheTitle('Parks'); setTitle('Public Parks in Newcastle Upon Tyne')">
+        <a routerLink="/theme/park/Jesmond Panel">Parks:</a>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        (click)="setTheTitle('Plaque'); setTitle('Hods More Commemorative Plaques in Newcastle Upon Tyne')">
+        <a routerLink="/theme/plaque/Local Hero Plaque">Plaques</a>
+      </li>
+
+    </ul>
+  </div>
+</span>
+
+<!-- cover space between contents on small devices only-->
+
+<span class="fill-space"></span>
+
+<!-- this is the three dot menue always visible -->
+<!-- <span>
+
+  <mat-menu #appMenu="matMenu">
+        <a *ngIf="isAuthenticated" class="color-primary" routerLinkActive="active" routerLink="/tabledata/location/University Quarter"
+          (click)="setTheTitle('Neighbourhood'); setTitle('Attractions by Neighbourhood Table in Newcastle Upon Tyne')" >
+          <button mat-menu-item>Neighbourhood</button></a>
+        <a *ngIf="isAuthenticated" routerLinkActive="active" routerLink="/tabledata/theme/panel" (click)="setTheTitle('Theme'); setTitle('Attractions by Theme Table in Newcastle Upon Tyne')"><button
+            mat-menu-item>Theme</button></a>
+        <a *ngIf="isAuthenticated" routerLinkActive="active" routerLink="/tabledata/theme_type/armstrong" (click)="setTheTitle('Theme Type');setTitle('Attractions by Theme Type Table in Newcastle Upon Tyne')"><button
+            mat-menu-item>Theme Type</button></a>
+
+        <a *ngIf="isAuthenticated" routerLinkActive="active" routerLink="/tabledata/resource/Jesmond Panel"
+          (click)="setTheTitle('Resource');setTitle('Attractions by Resourced Table in Newcastle Upon Tyne')"><button mat-menu-item>Resource</button></a>
+
+          <a  *ngIf="!isAuthenticated" routerLinkActive="active" routerLink="/signup/"
+          (click)="setTheTitle('Sign Up');setTitle('Sign Up to in Newcastle Upon Tyne Attractions')"><button mat-menu-item>Sign Up</button></a>
+
+
+          <a  *ngIf="!isAuthenticated" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/signin"
+          (click)="setTheTitle('Sign In');setTitle('Sign In to in Newcastle Upon Tyne Attractions')"><button mat-menu-item>Sign In</button></a>
+
+
+          <a *ngIf="isAuthenticated" routerLinkActive="active" (click)="onLogout(); setTitle('Log Out of  Newcastle Upon Tyne Attractions')" style="cursor: pointer;"><button mat-menu-item>Logout</button></a>
+
+          <a *ngIf="isAuthenticated" routerLinkActive="active" routerLink="/video"
+          (click)="setTheTitle('Videos');setTitle('Videos in Newcastle Upon Tyne')"><button mat-menu-item>Video</button></a>
+
+
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>menu</mat-icon>
+      </button>
+  </span> -->
+</mat-toolbar>
+
+

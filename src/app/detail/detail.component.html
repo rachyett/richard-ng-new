@@ -1,0 +1,107 @@
+<mat-accordion *ngIf="post" multi="true">
+      <mat-expansion-panel hideToggle="true">  <!--  section showing title and context image  -->
+
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h2 class="mat-h2">   {{ post.title }}</h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+      </mat-expansion-panel>
+       <!--  <img mat-card-image src="{{this.localImagePath+post.image}}" alt= {{post.title}}> -->
+    <img mat-card-image src="{{post.imagecontext ? this.localImagePath+post.imagecontext : this.localImagePath+post.image }}" alt= {{post.title}}>
+
+
+      <div class='content'><pre>{{ post.content }}</pre></div>
+
+
+      <!-- <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel> -->
+      <mat-expansion-panel *ngIf="post.video_url" [expanded]="true">
+          <div class="content video">               <!--  section showing video_url *ngIf="post.video_url" -->
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h2 class="mat-h2"> {{ post.title }}  - Video</h2>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-video src="https://seenewcastleuk-pdf.s3.eu-west-2.amazonaws.com/video/betterlocalheroes-720.mp4"></mat-video>
+        </div>
+      </mat-expansion-panel>
+
+
+
+      <mat-expansion-panel *ngIf="post.lat" [expanded]="true">  <!--  section showing map  -->
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              <h2 class="mat-h2"> Map and Location </h2>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <agm-map
+          [latitude]=this.lat
+          [longitude]=this.lng
+          [zoom]= this.zoom
+          [mapTypeId]="'hybrid'"
+          [streetViewControl]="false"
+          [scrollwheel]="false"
+          >
+            <agm-marker
+              [latitude]=this.lat
+              [longitude]=this.lng
+              [title]="post.title"
+              [label]="post.title">
+            </agm-marker>
+
+              <!-- <agm-circle [latitude]="post.lat" [longitude]="post.lg"
+                [radius]="100"
+                [fillColor]="'red'"
+                [circleDraggable]="true"
+                [editable]="true">
+            </agm-circle> documentation below
+          https://angular-maps.com/api-docs/agm-core/components/agmmap#scrollwheel
+          -->
+          </agm-map>
+    </mat-expansion-panel>
+
+      <mat-expansion-panel *ngIf="post.pdf_url" [expanded]="true">                  <!--  section showing pdf_url  -->
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            pdf_url
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div style="height: 600px">
+          <ng2-pdfjs-viewer pdfSrc="{{ post.pdf_url }}"></ng2-pdfjs-viewer>
+        </div>
+      </mat-expansion-panel>
+
+
+    <mat-expansion-panel *ngIf="post.twitter_url" >                  <!--  section showing twitter_url  -->
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          twitter collection
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <a class="twitter-timeline" href="https://twitter.com/SeeNewcastleUK/timelines/1146794038676336640?ref_src=twsrc%5Etfw">Best of Jesmond Dene - Curated tweets by SeeNewcastleUK</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </mat-expansion-panel>
+
+
+</mat-accordion>
+
+<!--
+<img src="https://seenewcastleuk-img.s3.eu-west-2.amazonaws.com/jesmondpanel-4.jpg" />
+
+
+
+
+ <picture>
+    <source media="(min-width: 1440px)" srcset="https://seenewcastleuk-img.s3.eu-west-2.amazonaws.com/jesmondpanel-1.jpg">
+    <source media="(min-width: 900px)" srcset="https://seenewcastleuk-img.s3.eu-west-2.amazonaws.com/jesmondpanel-2.jpg">
+    <source media="(min-width: 600px)" srcset="https://seenewcastleuk-img.s3.eu-west-2.amazonaws.com/jesmondpanel-3.jpg">
+    <img src="https://seenewcastleuk-img.s3.eu-west-2.amazonaws.com/jesmondpanel-4.jpg" />
+  </picture>
+Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

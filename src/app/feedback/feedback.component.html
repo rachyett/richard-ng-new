@@ -1,0 +1,90 @@
+<div class="container">
+
+
+
+
+
+<div class="bgimage">
+    <div class="notfoundbox">
+        <div class="abox">
+                <h2> What have we missed? </h2>
+        </div>
+      </div>
+<!-- <section class="signup-form"> -->
+    <!-- <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px"  #usrForm="ngForm" (ngSubmit)="onSubmit(usrForm)"  > -->
+<!-- <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" target="fake-target" method="POST" (ngSubmit)="onSubmit(usrForm)"
+  action="https://docs.google.com/forms/d/e/1FAIpQLScsakTYU51LnmyR_6qo-2WE0ZSV3SL8TUFwfqgunJeXupSviw/formResponse">
+  <mat-form-field hintLabel="Enter a valid email address">
+    <input type="email" matInput placeholder="Your email" ngModel name="entry.1000001" email required #emailInput="ngModel">
+    <mat-error *ngIf="emailInput.hasError('required')"> Field must not be empty.</mat-error>
+    <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="text" matInput placeholder="Your Name" ngModel name="entry.1000002" required minlength="6" row="10"
+      #pwInput="ngModel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea type="text" matInput placeholder="Your Comment" ngModel name="entry.1000003" required minlength="6" rows="6"
+      #pwInput="ngModel"></textarea>
+    <mat-hint>{{ pwInput.value?.length }} / 8</mat-hint>
+    <mat-error>Should be at least 8 characters long</mat-error>
+  </mat-form-field>
+   <div *ngIf="usrForm.value.password !== usrForm.value.confirmPassword">Passwords do not match!</div> -->
+    <!-- <button type="submit" mat-raised-button color="primary">Submit </button>
+</form> -->
+
+<!-- <div class="row" *ngIf="!confirmUser">
+  <div>
+    <button mat-raised-button color="primary" (click)="onDoConfirm()">Confirm User</button>
+  </div></div> -->
+  <!-- <form #form
+    action="https://docs.google.com/forms/d/e/1FAIpQLSc4swNjNjEx0TxP8znGT4GqHerOhiR7FHz79e4TWMOr9J7cRA/formResponse"
+    fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" method="post" onsubmit="custommsg();"> -->
+
+    <form #form target="fake-target" method="POST"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSc4swNjNjEx0TxP8znGT4GqHerOhiR7FHz79e4TWMOr9J7cRA/formResponse"
+      onsubmit="custommsg(); return true;" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="50px">
+      <mat-form-field>
+        <input matInput type="text" name="entry.318042782" required>
+        <mat-placeholder class="placeholder">Name</mat-placeholder>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="email" name="entry.2074421247" required>
+        <mat-placeholder class="placeholder">Email</mat-placeholder>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea rows="5"  matInput name="entry.1039480288" required></textarea>
+        <mat-placeholder class="placeholder">Comment</mat-placeholder>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit" class="btn btn-success" (click)="form.submit()">Submit</button>
+    </form>
+
+    <div class="bottomright">Tyneside's finest, repairing Stephenson's Monument</div>
+
+
+<!-- <div class="row" *ngIf="confirmUser">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #confirmForm="ngForm"
+    (ngSubmit)="onConfirm(confirmForm.value)">
+
+    <mat-form-field hintLabel="Enter your username/email address">
+      <input type="text" matInput placeholder="Your email" ngModel name="usrName" email required ngModel>
+      <mat-error *ngIf="emailInput.hasError('required')"> Field must not be empty.</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Enter Validation Code" ngModel name="validationCode" required
+        #pwInput="ngModel">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="confirmForm.invalid">Confirm your
+      Account</button>
+  </form> -->
+  <!-- <div class="loader" *ngIf="isLoading"></div> -->
+  <!-- <button type="submit" mat-raised-button color="primary" [disabled]="usrForm.invalid">Submit</button> -->
+<!-- </div> -->
+<!-- </section> -->
+
+</div>
+
+</div>

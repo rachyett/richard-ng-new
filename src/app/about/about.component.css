@@ -1,0 +1,28 @@
+.aboutText {
+  padding: 20px 20px 20px 20px;
+  color: white;
+  text-align: justify;
+  background-color: "primary";   /* color orchid */
+  line-height: 1.6;
+  font-size: 1.2em;
+}
+
+
+a:hover,
+    a:active {
+    color: lightgray;
+
+}
+
+a:link {
+  /* text-decoration: none; */
+  color: lightgray;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  color: white;
+}

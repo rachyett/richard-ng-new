@@ -1,0 +1,49 @@
+
+ /* vertical css
+.example-viewport {
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.example-item {
+height: 50px;
+}
+
+
+*/
+
+/*    *******************************horizontal css***********************************
+    *******************************end horizontal css*********************************** */
+
+.cdk-virtual-scroll-data-source-example .horizontal-viewport {
+  height: 200px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.cdk-virtual-scroll-data-source-example .horizontal-viewport .cdk-virtual-scroll-content-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.cdk-virtual-scroll-data-source-example .example-item {
+  width: 200px;
+  height: 100%;
+  writing-mode: horizontal-tb;
+}
+
+.mat-card-image {
+  height: 190px;
+  width: 190px;
+}
+/*  failed vertical viewport
+
+.cdk-virtual-scroll-data-source-example .vertical-viewport {
+  height: 100%;
+  width: 200px;
+  border: 1px solid black;
+}
+
+
+*/

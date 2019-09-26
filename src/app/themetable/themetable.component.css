@@ -1,0 +1,76 @@
+
+
+  .icon-display {
+    transform: scale(.75);
+    position: relative;
+    top: 60px;
+    left: 10px;
+ }
+
+.example-card {
+  max-width: 300px;
+  /* background-color: white; */
+ /* background-color: #40DEC8;  */
+  padding: 10px, 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.mat-card-title-group {
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  margin-left: 10px;
+}
+
+
+.mat-card-image {
+    border: 0px solid #ddd;
+    width: 100%;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    padding: 0,0,0,10px;
+}
+
+.mat-card-image.circ {
+  border-radius: 50%;
+}
+
+
+.mat-select {
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* .mat-card-title {
+
+} */
+
+
+ /*
+mat-card img{
+  object-fit: cover; this makes de image in src fit to the size of specified below
+  width: 100%;  Here you can use wherever you want to specify the width and also the height of the <img>
+  height: 60%;
+  object-position: center;
+}
+
+
+img {
+  filter:saturate(192);
+ /*  width: 99%;
+  box-shadow:20px 20px 50px 10px pink inset;
+  background-color:yellow; */
+
+
+ /*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); polaroid
+ opacity: 1.00;
+ filter: alpha(opacity=99); /* For IE8 and earlier
+}
+img {
+ -webkit-filter: contrast(200%) brightness(150%);  /* Safari
+ filter: contrast(90%) brightness(110%);
+}
+
+*/

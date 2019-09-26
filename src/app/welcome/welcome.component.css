@@ -1,0 +1,122 @@
+/* .hero {
+    background-image: url('/assets/background.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+  } */
+
+  .children {
+    padding: 10px 10px 10px 10px;
+    color: white;
+    text-align: justify;
+  }
+
+  h1 {
+    text-align: center;
+    font-weight: bold;
+
+  }
+    .child1 {
+      background-color:rgb(245 131 83);  /* color light orange */
+
+    }
+
+    .child5 {
+      background-color:rgb(242 201 112);   /* color light yellow */
+    }
+
+    .child3 {
+      background-color:rgb(104 201 208);  /* color light blue */
+    }
+
+    .child4 {
+      background-color:rgb(173 213 129);   /* color light green */
+    }
+
+    .child6 {
+      background-color:rgb(73 101 167);   /* color dark blue */
+    }
+
+    .child2 {
+      /*  background-color:rgb(182 75 135);   color orchid */
+      background-color:purple;
+    }
+
+
+    .myImageicon {
+      transform: scale(2);
+      /* font-size: 4em; */
+      /* height: 200px; */
+      /* display: block; */
+    }
+
+    /* .parent {
+      font-size: 4em;
+    } */
+
+    .inner {
+      width: 100px;
+      height: 100px;
+      background: green;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+
+    .myImageicon {
+      fill: #94d31b;
+    }
+    .myImageicon:hover {
+      fill: #ace63c;
+    }
+
+    .imageContainer {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+  /* Centered image text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 2vh;
+  }
+  /* .h2 {
+    font-size: 5vh;
+  } */
+
+    .responsive {
+      width: 100%;
+      height: auto;
+    }
+
+
+    a:hover,
+    a:active {
+    color: lightgray;
+
+}
+
+a:link {
+  /* text-decoration: none; */
+  color: lightgray;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  color: white;
+}

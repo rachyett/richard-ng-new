@@ -1,0 +1,65 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover,
+a:active{
+    color: lightgray;
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0,0,0,5;
+    margin: 0,;
+}
+.nav-caption {
+    display: inline-block;
+    padding: 6px;
+}
+li.active a {
+  color: lightgray;
+}
+
+::ng-deep .mat-icon{
+  height:100% !important;
+  width:60px !important;
+  font-size:48px !important;
+}
+.mat-menu-item {
+  color: rgb(96, 125, 139) !important;
+
+}
+
+.mat-icon-button {
+  float: right;
+}
+
+button.mat-menu-item {
+  background-color: white;
+}
+
+button.mat-menu-item:hover {
+    background-color: rgb(96, 125, 139);
+    color: #fff !important;
+}
+
+
+.color-primary {
+  background-color: "primary";
+}
+
+
+.fill-space {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+/*
+.mat-toolbar {
+  background:url('/assets/app-icon-48x48.png');
+  background-repeat: no-repeat;
+  background-size:auto;
+}
+*/

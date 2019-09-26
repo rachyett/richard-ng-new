@@ -1,0 +1,104 @@
+<div fxLayoutAlign="center center">
+<mat-form-field>
+  <!--  <mat-label>{{ dropdownLabel }}</mat-label> -->
+    <mat-select placeholder="{{ dropdownLabel }}" (selectionChange)="onFetchPosts(this.table.tablename,$event.value)">
+      <mat-option *ngFor="let taxonomy of taxonomys" [value]="taxonomy.value">
+        {{ taxonomy.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+
+    <mat-form-field fxFlex="40%">
+        <input #txtInput matInput type="text" (keyup)="doFilter($event.target.value)" (keydown.escape)="txtInput.blur()" placeholder="Search">
+      </mat-form-field>
+</div>
+
+
+
+<!--
+<p>isMobile? {{isMobile}}</p>
+<p>console.log({{getDisplayedColumns()}})</p>
+<p>Table Name is :- {{ this.table.tablename }}</p>
+<p>Starting String is :- {{ this.table.start }}</p>
+<a [routerLink]="['/tabledata','panel','North Shields Panel']" >LINK TO RESOURCE</a> -->
+
+<div *ngIf="showMainContent">
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="image" >
+    <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+    <mat-cell *matCellDef="let element"><img class="table_image" [src]="this.localImagePath + element.image" />
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+    <mat-cell *matCellDef="let element"><a [routerLink]="['/tabledata',table.tablename,table.start]">{{ element.title }}</a></mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="abstract">
+      <mat-header-cell *matHeaderCellDef>Summary</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.abstract }}</mat-cell>
+    </ng-container>
+  <ng-container matColumnDef="resource">
+    <mat-header-cell *matHeaderCellDef  mat-sort-header>Resource</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.resource }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="theme">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Theme</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.theme }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="theme_type">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Theme Type</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.theme_type }}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="neighbourhood">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Neighbourhood</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.neighbourhood}}</mat-cell>
+    </ng-container>
+  <ng-container matColumnDef="pid">
+    <mat-header-cell *matHeaderCellDef>Theme</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.pid }}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="getDisplayedColumns()"></mat-header-row>
+  <mat-row (click)="onSelect(row); getRecord(dataSource.data); ShowHideButton()" *matRowDef="let row; columns:getDisplayedColumns()"  [class.selected] = "row === selectedPost"></mat-row>
+</mat-table>
+<mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[1,5,10,20]">
+</mat-paginator>
+</div>
+<div *ngIf="!showMainContent">
+  <button (click)="ShowHideButton()" mat-icon-button><mat-icon class="icon-display" color="primary">arrow_back_ios</mat-icon></button>
+  <app-detail [post]="selectedPost"></app-detail>
+</div>
+<!--  this is what the detail looks like
+<section fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="0.9%" fxLayoutAlign.lt-md="center center">
+  <mat-card *ngFor="let post of dataSource.data" class="example-card" fxLayout="column" fxLayoutAlign="start start"
+    fxLayoutAlign.lt-md="center center">
+    <mat-card-header fxLayoutAlign="center center">
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <article>
+    <mat-card-title-group>
+      <img mat-card-md-image *ngIf=post.imageurl src="{{this.localImagePath+post.image}}" alt={{post.title}}>
+      <img mat-card-md-image *ngIf=post.imagecontext src="{{this.localImagePath+post.imagecontext}}" alt={{post.title}}>
+
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-subtitle>{{post.resource}}</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <p *ngIf=!post.abstract>Summary: {{ post.abstract }}</p>
+      <p *ngIf=post.content>Content: {{ post.content }}</p>
+      <p *ngIf=post.neighbourhood>Neigbourhood: {{ post.neighbourhood }}</p>
+      <p *ngIf=post.theme>Theme:{{ post.theme }}</p>
+      <p *ngIf=post.pdf_url>PDF:{{ post.pdf_url }}</p>
+      <p *ngIf=post.walk_url>Walk:{{ post.walk_url }}</p>
+      <p *ngIf=post.twitter_url>Twitter:{{ post.twitter_url }}</p>
+      <p *ngIf=post.video_url>Video:{{ post.video_url }}</p>
+      <p *ngIf=post.lat>Latitiude:{{ post.lat }}</p>
+      <p *ngIf=post.rank>Rank:{{ post.rank }}</p>
+      <p *ngIf=post.pid>ID: {{ post.pid }}</p>
+    </mat-card-content>
+    </article>
+  </mat-card>
+</section>
+-->

@@ -1,0 +1,76 @@
+<mat-form-field>
+  <mat-label>Select Art</mat-label>
+  <mat-select (selectionChange)="onFetchPosts($event.value)">
+    <mat-option *ngFor="let theme of themes" [value]="theme.value">
+      {{theme.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<!-- <div class="cdk-virtual-scroll-data-source-example">
+<cdk-virtual-scroll-viewport orientation="horizontal" itemSize="200" class="horizontal-viewport">
+        <mat-card *cdkVirtualFor="let post of loadedPosts"  [class.selected]="post === selectedPost" (click)="onSelect(post)" class="scrollable-content">
+          <img mat-card-image src="{{this.localImagePath+post.image}}" alt= {{post.title}}>
+          <mat-card-footer>{{ post.title }}</mat-card-footer>
+        </mat-card>
+</cdk-virtual-scroll-viewport>
+</div> -->
+
+
+<app-detail [post]="selectedPost"></app-detail>
+
+<!--
+    <cdk-virtual-scroll-viewport orientation="vertical" itemSize="200" class="vertical-viewport">
+            <mat-card *cdkVirtualFor="let post of loadedPosts"  class="scrollable-content">
+              <img mat-card-image src="{{this.localImagePath+post.image}}" alt= {{post.title}}>
+              <mat-card-footer>{{ post.title }}</mat-card-footer>
+            </mat-card>
+    </cdk-virtual-scroll-viewport>
+-->
+
+<!--  vertical scroller
+  <cdk-virtual-scroll-viewport itemSize="200" class="vertical-viewport">
+    <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+  </cdk-virtual-scroll-viewport>
+-->
+
+<!--  horizontal scroller working
+<div class="cdk-virtual-scroll-data-source-example">
+<cdk-virtual-scroll-viewport orientation="horizontal" itemSize="50" class="example-viewport">
+  <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport>
+</div>
+-->
+<!--
+<section fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="0.9%" fxLayoutGap.xs="0" fxLayoutAlign.lt-md="center center">
+<mat-card *ngFor="let post of loadedPosts"  class="example-card" fxLayout="column" fxLayoutAlign="start start" fxLayoutAlign.lt-md="center center">
+  <mat-card-header fxLayoutAlign ="center center">
+  <img mat-card-image src="{{this.localImagePath+post.imageurl}}" alt= {{post.title}} >
+  </mat-card-header>
+  <mat-card-title>{{ post.title }}</mat-card-title>
+  <mat-card-subtitle>{{post.resource}}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{ post.abstract }}</p>
+  </mat-card-content>
+</mat-card>
+</section>
+
+
+<section fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="0.9%" fxLayoutAlign.lt-md="center center">
+<mat-card *ngFor="let post of loadedPosts"  class="example-card" fxLayout="column" fxLayoutAlign="start start" fxLayoutAlign.lt-md="center center">
+    <mat-card-header fxLayoutAlign ="center center">
+    <img mat-card-image src="{{this.localImagePath+post.imageurl}}" alt= {{post.title}} >
+    </mat-card-header>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-subtitle>{{post.resource}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ post.abstract }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+-->

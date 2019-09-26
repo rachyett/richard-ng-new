@@ -1,0 +1,58 @@
+.mat-table {
+  width: 100%;
+}
+
+.mat-row:nth-child(even){
+  background-color:lightgray;
+  cursor: pointer;
+  }
+
+.mat-row:nth-child(odd){
+  background-color:white;
+  cursor: pointer;
+  }
+
+
+.example-card {
+  max-width: 600px;
+}
+
+.mat-card-title-group {
+  margin-bottom: 20px;
+}
+.mat-cell, .mat-header-cell {
+  flex: 1;
+  max-height: 50px;
+  display: flex;
+  align-items: left;
+  padding: 2px 8px 2px 8px;
+}
+.mat-form-field {
+  margin-left: 20px;
+}
+
+.table_image {
+  max-height: 56px;
+  width: 100px;
+}
+
+.icon-display {
+  transform: scale(.75);
+  position: absolute;
+  top: 65px;
+}
+
+
+.fill-space {
+  /*// This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+/*
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+*/
