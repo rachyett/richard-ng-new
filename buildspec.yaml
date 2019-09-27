@@ -3,8 +3,8 @@ version: 0.2
 
 env:
     variables:
-        S3_BUCKET: "<S3_BUCKET_HERE>"
-APP_NAME: "<APP_NAME_HERE>"
+        S3_BUCKET: "blog.seenewcastleuk.com"
+APP_NAME: "<richard-ng-new>"
 BUILD_ENV : "prod"
 
 phases:
