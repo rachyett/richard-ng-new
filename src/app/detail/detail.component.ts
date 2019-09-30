@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Post } from '../services/post.model';
 import { environment } from '../../environments/environment';
+import { ToolbarService } from '../services/toolbar.service';
 
 @Component({
   selector: 'app-detail',
@@ -21,7 +22,7 @@ export class DetailComponent implements OnInit, OnDestroy {
   lng: number;
 
 
-  constructor(private route: ActivatedRoute , private router: Router ) {
+  constructor(private route: ActivatedRoute , private router: Router, private toolbarservice: ToolbarService ) {
 
     this.localImagePath = environment.largeImagePath;
     this.pid = this.route.snapshot.params.pid;
@@ -35,6 +36,7 @@ export class DetailComponent implements OnInit, OnDestroy {
     this.lat = parseFloat(this.post.lat);
     this.lng = parseFloat(this.post.lg);
     this.zoom = 18;
+    this.toolbarservice.hide();
   }
 
   onHandleError() {
@@ -42,6 +44,7 @@ export class DetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.toolbarservice.show();
     console.log('closed DetailComponent');
   }
 }

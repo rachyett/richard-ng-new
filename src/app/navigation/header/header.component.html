@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary"*ngIf="toolbarservice.visible|async">
 <span>
 <!-- this is the 'hamburger button' only showing on smalll devices-->
   <div fxHide.gt-xs>

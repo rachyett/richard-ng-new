@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 
 import { HeaderService } from '../../services/headertitle.service';
 import { AuthService } from '../../user/auth.service';
+import { ToolbarService } from '../../services/toolbar.service';
+
 import { ThemetableComponent } from 'src/app/themetable/themetable.component';
 
 @Component({
@@ -16,7 +18,8 @@ export class HeaderComponent implements OnInit {
 @Output()  sidenavToggle = new EventEmitter<void>();
 @Output()  clickToolbar = new EventEmitter<void>();
 
-  constructor(private headerservice: HeaderService, private router: Router, private titleService: Title, private authService: AuthService) {
+  constructor(private headerservice: HeaderService, private router: Router,
+              private titleService: Title, private authService: AuthService, public toolbarservice: ToolbarService) {
   }
 
    public setTitle( newTitle: string) {

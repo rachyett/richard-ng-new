@@ -9,6 +9,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { ConditionalExpr } from '@angular/compiler';
 import { HostListener, EventEmitter, Output } from '@angular/core';
+import { ToolbarService } from '../services/toolbar.service';
 
 
 @Component({
@@ -53,7 +54,8 @@ export class ThemetableComponent implements OnInit, OnDestroy {
     private postsService: DynamoService,
     private router: Router,
     public route: ActivatedRoute,
-    private dropdownService: DropdownService
+    private dropdownService: DropdownService,
+    public toolbarservice: ToolbarService
   ) {
 
     // router.events.subscribe((event: Event) => {
@@ -95,6 +97,7 @@ export class ThemetableComponent implements OnInit, OnDestroy {
       this.theme.id = params.id;
        /* runs each time the path parameters change  */
       this.fetchFunction(this.theme.name, this.theme.resourcename);
+      this.toolbarservice.show();
     });
 
 
@@ -271,6 +274,7 @@ export class ThemetableComponent implements OnInit, OnDestroy {
     console.log('Back button pressed');
     this.ShowHideButton();
   }
+
 
   ShowHideButton() {
     console.log('showhidebutton');
