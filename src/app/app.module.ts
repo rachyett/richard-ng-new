@@ -17,7 +17,6 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { TableDataComponent } from './tabledata/tabledata.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThemetableComponent } from './themetable/themetable.component';
-import { PlaqueComponent } from './plaque/plaque.component';
 import { ArtComponent } from './art/art.component';
 import { DetailComponent } from './detail/detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -50,7 +49,6 @@ import { FooterComponent } from './navigation/footer/footer.component';
     SigninDialogComponent,
     TableDataComponent,
     ThemetableComponent,
-    PlaqueComponent,
     ArtComponent,
     DetailComponent,
     PageNotFoundComponent,
