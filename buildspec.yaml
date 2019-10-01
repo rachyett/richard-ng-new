@@ -10,3 +10,12 @@ phases:
   build:
     commands:
       - npm run build
+artifacts:
+  files:
+    - '**/*.html'
+    - '**/*.ico'
+    - '**/*.js'
+    - '**/*.json'
+    - '**/*.css'
+  discard-paths: yes
+  base-directory: 'dist/richard-ng-new'
